@@ -1,4 +1,4 @@
-import {Router} from 'angular2/router';
+import {Router,RouterLink} from 'angular2/router';
 import {isPresent} from 'angular2/src/facade/lang';
 import {
   Directive,
