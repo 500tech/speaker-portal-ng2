@@ -2,6 +2,7 @@
 
 var webpack = require('webpack');
 var helpers = require('./helpers');
+var path              = require('path');
 
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -45,31 +46,66 @@ module.exports = {
 
   module: {
     preLoaders: [
-      // { test: /\.ts$/, loader: 'tslint-loader', exclude: [ helpers.root('node_modules') ] },
-      // TODO(gdi2290): `exclude: [ helpers.root('node_modules/rxjs') ]` fixed with rxjs 5 beta.3 release
-      { test: /\.js$/, loader: "source-map-loader", exclude: [ helpers.root('node_modules/rxjs') ] }
+      // { test: /\.ts$/, loader: 'tslint-loader', exclude: [
+      // helpers.root('node_modules') ] }, TODO(gdi2290): `exclude: [
+      // helpers.root('node_modules/rxjs') ]` fixed with rxjs 5 beta.3 release
+      {
+        test: /\.js$/,
+        loader: "source-map-loader",
+        exclude: [helpers.root('node_modules/rxjs')]
+      }
     ],
     loaders: [
       // Support for .ts files.
-      { test: /\.ts$/, loader: 'ts-loader', exclude: [ /\.(spec|e2e)\.ts$/, helpers.root('node_modules') ] },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        exclude: [/\.(spec|e2e)\.ts$/, helpers.root('node_modules')]
+      },
 
       // Support for *.json files.
-      { test: /\.json$/,  loader: 'json-loader', exclude: [ helpers.root('node_modules') ] },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+        exclude: [helpers.root('node_modules')]
+      },
 
       // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw-loader', exclude: [ helpers.root('node_modules') ] },
+      {
+        test: /\.css$/,
+        loader: 'raw-loader',
+        exclude: [helpers.root('node_modules')]
+      },
+
+      // SCSS
+      {
+        test: /\.s?css$/,
+        loaders: [
+          'style',
+          'css',
+          'sass?includePaths[]=' + path.join(__dirname, '/app')
+        ]
+      },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw-loader', exclude: [ helpers.root('src/index.html'), helpers.root('node_modules') ] }
+      {
+        test: /\.html$/,
+        loader: 'raw-loader',
+        exclude: [helpers.root('src/index.html'), helpers.root('node_modules')]
+      }
 
     ]
   },
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'polyfills', filename: 'polyfills.bundle.js', minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'polyfills',
+      filename: 'polyfills.bundle.js',
+      minChunks: Infinity
+    }),
     // static assets
-    new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
+    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
     // generating html
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
     // replace
