@@ -4,22 +4,22 @@ export const SIDEBAR_ITEMS = [
   {
     name: 'Home',
     icon: 'home',
-    state: 'home'
+    state: ["/Home"]
   },
   {
     name: 'Profile',
     icon: 'perm_identity',
-    state: 'profile'
+    state: ["/Profile"]
   },
   {
-    name: 'Inbox',
-    icon: 'inbox',
-    state: 'inbox'
+    name: 'Papers list',
+    icon: 'reorder',
+    state: ["/PapersList"]
   },
   {
     name: 'Updates',
     icon: 'flag',
-    state: 'updates'
+    state:["/Profile"]
   }
 
 ];

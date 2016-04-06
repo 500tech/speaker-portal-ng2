@@ -70,21 +70,23 @@ module.exports = {
         exclude: [helpers.root('node_modules')]
       },
 
-      // Support for CSS as raw text
-      {
-        test: /\.css$/,
-        loader: 'raw-loader',
-        exclude: [helpers.root('node_modules')]
-      },
-
       // SCSS
       {
         test: /\.s?css$/,
         loaders: [
           'style',
           'css',
-          'sass?includePaths[]=' + path.join(__dirname, '/app')
+          'sass?includePaths[]=' + path.join(__dirname, '/src')
         ]
+      },
+      // Fonts and images
+      {
+        test: /\.(ttf|eot|svg|otf|png|jpg|woff2?)(\?.*$|$)$/,
+        loader: 'file'
+      },
+      {
+        test: require.resolve('jquery'),
+        loader: 'expose?$!expose?jQuery'
       },
 
       // support for .html as raw text

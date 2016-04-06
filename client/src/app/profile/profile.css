@@ -1,0 +1,13 @@
+/*.add-company :first-child {*/
+  /*order: 2;*/
+/*}*/
+
+/*.add-company :nth-child(2) {*/
+  /*order: 1;*/
+/*}*/
+.add-company-btn {
+  display: inline-block;
+  background-color: #26c6da!important;
+  color:white;
+}
+
