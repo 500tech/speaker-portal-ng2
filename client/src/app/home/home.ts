@@ -4,7 +4,7 @@ import {FORM_DIRECTIVES} from 'angular2/common';
 
 @Component({
   pipes: [ ],
-  styles: [ require('./home.css') ],
+  styles: [ require('!!raw!./home.css') ],
   template: require('./home.html')
 })
 export class Home {

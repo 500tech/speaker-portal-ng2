@@ -1,0 +1,166 @@
+<div class="">
+  <h3 class="display-2">Profile</h3>
+  <div class="col-lg-12 well">
+    <div class="row">
+      <form>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Name *</label>
+              <input type="text"
+                     placeholder="Name"
+                     class="form-control"
+                     [(ngModel)]="profileInfo.name">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Surname*</label>
+              <input type="text"
+                     placeholder="Surname"
+                     class="form-control"
+                     [(ngModel)]="profileInfo.surname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Biography *</label>
+            <textarea placeholder="600 characters max"
+                      rows="3"
+                      class="form-control"
+                      [(ngModel)]="profileInfo.biography"></textarea>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-10">
+              <div class="col-sm-12 display-flex align-flex-center"
+                   *ngFor="#company of profileInfo.companies; #i = index">
+                <div class="col-sm-5 form-group">
+                  <label>Company *</label>
+                  <input type="text"
+                         placeholder="Company"
+                         class="form-control"
+                         [(ngModel)]="profileInfo.companies[i].company">
+                </div>
+                <div class="col-sm-5 form-group">
+                  <label>Role *</label>
+                  <input type="text"
+                         placeholder="Role"
+                         class="form-control"
+                         [(ngModel)]="profileInfo.companies[i].role">
+                </div>
+                <div class="col-sm-2">
+                  <button type="button"
+                          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                          [disabled]="profileInfo.companies.length==1"
+                          style="margin-top: 7px;"
+                          (click)="removeCompany(i)">x
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <button
+                class="add-btn mdl-button mdl-js-button mdl-js-ripple-effect"
+                (click)="addCompany()">Add Company +
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Nationality *</label>
+              <input type="text"
+                     placeholder="Enter Designation Here.."
+                     [(ngModel)]="profileInfo.nationality"
+                     class="form-control">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Where are you based? *</label>
+              <input type="text"
+                     placeholder="city / country"
+                     [(ngModel)]="profileInfo.based"
+                     class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel"
+                   placeholder="It won't public on your profile"
+                   [(ngModel)]="profileInfo.phone"
+                   class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Website</label>
+            <input type="text"
+                   placeholder="http://www.rossi.com"
+                   [(ngModel)]="profileInfo.website"
+                   class="form-control">
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Twitter</label>
+              <input type="text"
+                     placeholder="@username"
+                     [(ngModel)]="profileInfo.twitter"
+                     class="form-control">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Linkedin</label>
+              <input type="text"
+                     placeholder="include http://"
+                     [(ngModel)]="profileInfo.linkedin"
+                     class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Facebook</label>
+              <input type="text"
+                     placeholder="include http://"
+                     [(ngModel)]="profileInfo.facebook"
+                     class="form-control">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Github / Bitbucket</label>
+              <input type="text"
+                     placeholder="include http://"
+                     [(ngModel)]="profileInfo.git"
+                     class="form-control">
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-6 form-group login-group-checkbox">
+              <label>
+                Are you a member of communities?
+              </label>
+              <div>
+                <label for="Yes"
+                       class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                  <input type="radio" class="mdl-radio__button" id="Yes"
+                         name="options" value="1" checked/>
+                  <span class="mdl-radio__label">Yes</span>
+                </label>
+
+                <label for="No"
+                       class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                  <input type="radio" class="mdl-radio__button" id="No"
+                         name="options" value="2"/>
+                  <span class="mdl-radio__label">No</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Which one?</label>
+              <input type="text"
+                     placeholder="include http://"
+                     [(ngModel)]="profileInfo.community"
+                     class="form-control">
+            </div>
+          </div>
+          <button type="button"
+                  class="add-btn mdl-button mdl-js-button mdl-js-ripple-effect"
+                  (click)="applyData()">Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

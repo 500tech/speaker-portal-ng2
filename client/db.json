@@ -1,0 +1,177 @@
+{
+  "open_calls": [
+    {
+      "id": 1,
+      "name": "Dublin 2016",
+      "date": "until 2016-04-17 23:59:59"
+    },
+    {
+      "id": 2,
+      "name": "data Driven Innovation 2016",
+      "date": "until 2016-04-10 23:59:59"
+    },
+    {
+      "id": 3,
+      "name": "Berlin 2016",
+      "date": "until 2016-04-12 23:59:59"
+    }
+  ],
+  "papers_list": [
+    {
+      "title": "How Angular 2 can improve angular 1 apps today",
+      "conference": "Rome 2016",
+      "status": "published",
+      "modify": true,
+      "duplicate": true,
+      "delete": true
+    },
+    {
+      "title": "How Idan can tech nir Angular 2 and improve him",
+      "conference": "Yehud 2016",
+      "status": "published",
+      "modify": true,
+      "duplicate": true,
+      "delete": true
+    },
+    {
+      "title": "workshop angular 2",
+      "conference": "Tel Aviv 2016",
+      "status": "waiting for approval",
+      "modify": true,
+      "duplicate": true,
+      "delete": true
+    },
+    {
+      "title": "How Angular 2 can improve angular 1 apps today",
+      "conference": "Rome 2016",
+      "status": "published",
+      "modify": true,
+      "duplicate": true,
+      "delete": true
+    }
+  ],
+  "session_type": [
+    {
+      "key": 1,
+      "value": "tech talk"
+    },
+    {
+      "key": 2,
+      "value": "lab"
+    },
+    {
+      "key": 3,
+      "value": "meetup"
+    },
+    {
+      "key": 4,
+      "value": "talk"
+    }
+  ],
+  "level": [
+    {
+      "key": 1,
+      "value": "beginner"
+    },
+    {
+      "key": 2,
+      "value": "Intermediate"
+    },
+    {
+      "key": 3,
+      "value": "advanced"
+    }
+  ],
+  "papers": [
+    {
+      "coSpeaker": [
+        {}
+      ],
+      "title": "How Angular 2 can improve angular 1 apps today",
+      "event": "Rome 2016",
+      "Language": "dfdf",
+      "abstract": "sdfdf",
+      "sessionType": 2,
+      "level": 2,
+      "tags": "web",
+      "requirements": "dfdf",
+      "note": "dfdf",
+      "id": 19,
+      "modify": true,
+      "duplicate": true,
+      "delete": true
+    },
+    {
+      "coSpeaker": [
+        {}
+      ],
+      "event": "ddd",
+      "Language": "dd",
+      "title": "dddd",
+      "abstract": "dddd",
+      "sessionType": 3,
+      "level": 2,
+      "length": 23,
+      "tags": "html5",
+      "note": "dfgf",
+      "modify": true,
+      "duplicate": true,
+      "delete": true,
+      "id": 20
+    },
+    {
+      "coSpeaker": [
+        {}
+      ],
+      "event": "ddd",
+      "Language": "dd",
+      "title": "dddd",
+      "abstract": "dddd",
+      "sessionType": 3,
+      "level": 2,
+      "length": 23,
+      "tags": "html5",
+      "note": "dfgf",
+      "modify": true,
+      "duplicate": true,
+      "delete": true,
+      "id": 21
+    },
+    {
+      "coSpeaker": [
+        {
+          "email": "dfdfd"
+        }
+      ],
+      "event": "aaa",
+      "Language": "aa",
+      "title": "aaa",
+      "abstract": "aaa",
+      "sessionType": 2,
+      "length": null,
+      "level": 3,
+      "tags": "ux",
+      "requirements": "aaa",
+      "modify": true,
+      "duplicate": true,
+      "delete": true,
+      "id": 23
+    }
+  ],
+  "profile": {
+    "companies": [
+      {
+        "company": "500tech",
+        "role": "developer"
+      }
+    ],
+    "name": "idan1",
+    "phone": "0549292544",
+    "surname": "angular2 pro",
+    "biography": "idan nanim nsnssd",
+    "nationality": "israeli",
+    "based": "Tel aviv",
+    "website": "http://www.500tech.com",
+    "community": "angularJs il"
+  }
+}
