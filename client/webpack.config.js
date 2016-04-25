@@ -14,7 +14,7 @@ var metadata = {
   title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
   baseUrl: '/',
   host: 'localhost',
-  port: 3000,
+  port: 3001,
   ENV: ENV,
   HMR: HMR
 };

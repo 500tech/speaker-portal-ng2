@@ -3,5 +3,17 @@
 
 <div class="open-calls">
   <h3>Open Calls:</h3>
-
+  <table style="color:white; font-size: 15px; line-height: 22px;">
+    <tbody>
+    <tr *ngFor="#call of papersCall">
+      <td style="padding-right: 30px;">{{ call.name }}:</td>
+      <td>{{ call.date }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
+
+<h4>Table design with checkbox</h4>
+
+
+<calls-table [list]="myPapersList"></calls-table>

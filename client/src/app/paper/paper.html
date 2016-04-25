@@ -1,0 +1,138 @@
+<div class="">
+  <h3 class="display-2">New paper</h3>
+  <div class="col-lg-12 well">
+    <div class="row">
+      <form>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Event to submit *</label>
+              <input type="text"
+                     placeholder="Name"
+                     class="form-control"
+                     [(ngModel)]="paper.event">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Language *</label>
+              <input type="text"
+                     placeholder="Surname"
+                     class="form-control"
+                     [(ngModel)]="paper.Language">
+            </div>
+          </div>
+
+
+          <div class="row display-flex align-flex-bottom">
+            <div class="align-flex-end col-sm-4 form-group">
+              <button class="mdl-button
+                  mdl-js-button mdl-button--raised mdl-js-ripple-effect
+                  mdl-button--accent ">Import from older paper
+                <i class="material-icons">file_download</i></button>
+            </div>
+            <div class="align-flex align-flex-bottom col-sm-8 form-group">
+              <label>Title *</label>
+              <input type="text"
+                     placeholder="Role"
+                     class="form-control"
+                     [(ngModel)]="paper.title">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label>Abstract *</label>
+            <textarea placeholder="600 characters max"
+                      rows="5"
+                      class="form-control"
+                      [(ngModel)]="paper.abstract"></textarea>
+          </div>
+          <hr>
+
+          <div class="form-group">
+            <label>Session type *</label>
+            <select class="form-control" required
+            [(ngModel)]="paper.sessionType">
+              <option *ngFor="#type of sessionTypes" [value]="type.key">
+                {{type.value}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Level *</label>
+            <select class="form-control" required
+                    [(ngModel)]="paper.level">
+              <option *ngFor="#level of levels" [value]="level.key">
+                {{level.value}}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Length *</label>
+            <input type="number"
+                   placeholder="It won't public on your profile"
+                   [(ngModel)]="paper.length"
+                   class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Tags</label>
+            <input type="text"
+                   placeholder="web, ux, html5"
+                   [(ngModel)]="paper.tags"
+                   class="form-control">
+          </div>
+
+
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="col-sm-12 display-flex align-flex-bottom"
+                   *ngFor="#company of paper.coSpeaker; #i = index">
+                <div class="col-sm-8 form-group">
+                  <label>Co-Speaker</label>
+                  <input type="email"
+                         placeholder="co-speaker e-mail address"
+                         class="form-control"
+                         [(ngModel)]="paper.coSpeaker[i].email">
+                </div>
+                <div class="col-sm-4 form-group">
+                  <button type="button"
+                          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                          [disabled]="paper.coSpeaker.length==1"
+                          (click)="removeCoSpeaker(i)">x
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <button
+                class="add-btn mdl-button mdl-js-button mdl-js-ripple-effect"
+
+                (click)="addCoSpeaker()">Add co-speaker +
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Technical and logistical requirements for your speech</label>
+            <textarea
+              placeholder=" Please tell us if you have particular requirements, for your laptop, internet access, audio connection..."
+              rows="5"
+              class="form-control"
+              [(ngModel)]="paper.requirements"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Note</label>
+            <textarea
+              rows="5"
+              class="form-control"
+              [(ngModel)]="paper.note"></textarea>
+          </div>
+          <button type="button"
+                  class="add-btn mdl-button mdl-button mdl-js-button mdl-js-ripple-effect"
+                  (click)="applyData()">Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

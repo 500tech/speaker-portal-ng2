@@ -1,5 +1,3 @@
-import {Injectable} from "angular2/core";
-
 export const SIDEBAR_ITEMS = [
   {
     name: 'Home',
@@ -17,9 +15,9 @@ export const SIDEBAR_ITEMS = [
     state: ["/PapersList"]
   },
   {
-    name: 'Updates',
-    icon: 'flag',
-    state:["/Profile"]
+    name: 'New paper',
+    icon: 'add',
+    state: ["/Paper"]
   }
 
 ];

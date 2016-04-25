@@ -29,34 +29,36 @@
           </div>
           <hr>
           <div class="row">
-            <div class="display-flex align-flex-bottom clearfix  col-xs-10"
-                 *ngFor="#company of profileInfo.companies; #i = index">
-              <div class="align-flex-end col-sm-4 form-group">
-                <label>Company *</label>
-                <input type="text"
-                       placeholder="Company"
-                       class="form-control"
-                       [(ngModel)]="profileInfo.companies[i].company">
-              </div>
-              <div class="align-flex align-flex-bottom col-sm-4 form-group">
-                <label>Role *</label>
-                <input type="text"
-                       placeholder="Role"
-                       class="form-control"
-                       [(ngModel)]="profileInfo.companies[i].role">
-              </div>
-              <div class="align-flex-end col-sm-4 form-group">
-                <button type="button"
-                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                        style="margin-bottom: 2px;"
-                        [disabled]="profileInfo.companies.length==1"
-                        (click)="removeCompany(i)">x
-                </button>
+            <div class="col-xs-10">
+              <div class="col-sm-12 display-flex align-flex-center"
+                   *ngFor="#company of profileInfo.companies; #i = index">
+                <div class="col-sm-5 form-group">
+                  <label>Company *</label>
+                  <input type="text"
+                         placeholder="Company"
+                         class="form-control"
+                         [(ngModel)]="profileInfo.companies[i].company">
+                </div>
+                <div class="col-sm-5 form-group">
+                  <label>Role *</label>
+                  <input type="text"
+                         placeholder="Role"
+                         class="form-control"
+                         [(ngModel)]="profileInfo.companies[i].role">
+                </div>
+                <div class="col-sm-2">
+                  <button type="button"
+                          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                          [disabled]="profileInfo.companies.length==1"
+                          style="margin-top: 7px;"
+                          (click)="removeCompany(i)">x
+                  </button>
+                </div>
               </div>
             </div>
             <div class="col-xs-2">
               <button
-                class="add-company-btn mdl-button mdl-js-button mdl-js-ripple-effect"
+                class="add-btn mdl-button mdl-js-button mdl-js-ripple-effect"
                 (click)="addCompany()">Add Company +
               </button>
             </div>
@@ -154,8 +156,9 @@
             </div>
           </div>
           <button type="button"
-                  class="add-company-btn mdl-button mdl-js-button mdl-js-ripple-effect"
-                  (click)="applyData()">Submit</button>
+                  class="add-btn mdl-button mdl-js-button mdl-js-ripple-effect"
+                  (click)="applyData()">Submit
+          </button>
         </div>
       </form>
     </div>

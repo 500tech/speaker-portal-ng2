@@ -1,0 +1,28 @@
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Title</th>
+    <th class="mdl-data-table__cell--non-numeric">Conference</th>
+    <th class="mdl-data-table__cell--non-numeric">Status</th>
+    <th class="mdl-data-table__cell--non-numeric">Modify</th>
+    <th class="mdl-data-table__cell--non-numeric">Duplicate</th>
+    <th class="mdl-data-table__cell--non-numeric">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="#item of list">
+    <td class="mdl-data-table__cell--non-numeric">{{ item.title }}</td>
+    <td>{{ item.event }}</td>
+    <td>{{ item.status || 'waiting for approval'}}</td>
+    <td *ngIf="item.modify" (click)="modify(item.id)">
+      <i class="material-icons">edit</i>
+    </td>
+    <td *ngIf="item.duplicate" (click)="duplicateItem(item)">
+      <i class="material-icons">filter_none</i></td>
+    <td *ngIf="item.delete" (click)="deleteItem(item)">
+      <i class="material-icons">delete</i>
+      </td>
+  </tr>
+  </tbody>
+</table>
+
